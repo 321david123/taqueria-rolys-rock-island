@@ -279,7 +279,7 @@
           Call <a href="tel:+13095176516">(309) 517-6516</a> or order on Uber Eats &amp; DoorDash.</p>
       </div>
 
-      <div class="menu__cols">
+      <div class="menu__cols" id="menuCols">
         <div class="menu__group">
           <h3 class="menu__group-title">Tacos</h3>
           <div class="m-item">
@@ -542,5 +542,36 @@
 
   <!-- Visibility failsafe -->
   <script>setTimeout(function(){document.querySelectorAll(".reveal,[data-reveal]").forEach(function(e){e.classList.add("is-visible")});document.querySelectorAll("[data-hero-line],.hero__line,.hero__title .line>span,.hero__title-script,.hero__title-word").forEach(function(e){e.style.opacity="1";e.style.transform="none";e.style.visibility="visible"})},2200);</script>
+  <!-- Live menu from Supabase (editable via the admin panel). Progressive enhancement: static menu shows if this fails. -->
+  <script>
+  (function(){
+    var SB='https://scgcgfcfvbuppkraxjrp.supabase.co';
+    var KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNjZ2NnZmNmdmJ1cHBrcmF4anJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAwNjk2MTQsImV4cCI6MjA5NTY0NTYxNH0.Yjz5X8xnqYmOQOMN-4VGBCw0uF3Sy0D-umC-b5nxp54';
+    var NOTES={'Platillos':'Dinner plates served with rice and beans.'};
+    function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+    function price(it){ if(it.precio_texto) return esc(it.precio_texto); if(it.precio==null||it.precio==='') return ''; var p=Number(it.precio); return '$'+(Number.isInteger(p)?p:p.toFixed(2)); }
+    function itemHTML(it){ return '<div class="m-item"><div class="m-item__head"><span class="m-item__name">'+esc(it.nombre)+'</span><span class="m-leader"></span><span class="m-item__price">'+price(it)+'</span></div>'+(it.descr?'<p class="m-item__desc">'+esc(it.descr)+'</p>':'')+'</div>'; }
+    fetch(SB+'/rest/v1/tr_menu?select=*&activo=eq.true&order=orden',{headers:{apikey:KEY}})
+      .then(function(r){return r.ok?r.json():Promise.reject();})
+      .then(function(items){
+        var cols=document.getElementById('menuCols');
+        if(!cols||!items||!items.length) return;
+        var order=[],groups={};
+        items.forEach(function(it){ if(!groups[it.categoria]){groups[it.categoria]=[];order.push(it.categoria);} groups[it.categoria].push(it); });
+        var half=Math.ceil(order.length/2), colArr=[order.slice(0,half),order.slice(half)], html='';
+        colArr.forEach(function(cats){
+          html+='<div class="menu__group">';
+          cats.forEach(function(cat,i){
+            html+='<h3 class="menu__group-title'+(i>0?' menu__group-title--sub':'')+'">'+esc(cat)+'</h3>';
+            if(NOTES[cat]) html+='<p class="m-item__desc m-item__desc--free" style="margin-bottom:1.3rem;">'+esc(NOTES[cat])+'</p>';
+            groups[cat].forEach(function(it){ html+=itemHTML(it); });
+          });
+          html+='</div>';
+        });
+        cols.innerHTML=html;
+      })
+      .catch(function(){});
+  })();
+  </script>
 </body>
 </html>

@@ -107,6 +107,8 @@
         <a href="https://www.ubereats.com/store/taqueria-rolys/mVJHTYdbWDWbHeLoL3czOQ" target="_blank" rel="noopener" class="btn btn--red">Order Online</a>
       </div>
 
+      <button id="langToggle" class="lang-toggle" type="button" aria-label="Language / Idioma" title="English / Español"><span data-l="en">EN</span><span data-l="es">ES</span></button>
+
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="overlay">
         <span></span><span></span><span></span>
       </button>
@@ -572,6 +574,97 @@
       })
       .catch(function(){});
   })();
+  </script>
+
+  <!-- ===== EN/ES language toggle ===== -->
+  <style id="i18n-style">
+    .lang-toggle{display:inline-flex;align-items:center;border:1.4px solid currentColor;border-radius:999px;overflow:hidden;background:transparent;cursor:pointer;padding:0;margin:0 .55rem 0 0;font-family:inherit;vertical-align:middle;opacity:.82;-webkit-tap-highlight-color:transparent;flex:0 0 auto}
+    .lang-toggle:hover{opacity:1}
+    .lang-toggle span{display:block;padding:.36em .56em;font-size:.68rem;font-weight:800;letter-spacing:.04em;color:currentColor;line-height:1;transition:background .15s,color .15s}
+    .lang-toggle span.on{background:#c1272d;color:#fff}
+    @media(max-width:600px){ .lang-toggle{margin-right:.5rem} .lang-toggle span{padding:.34em .48em;font-size:.66rem} }
+    html[lang="es"] .hours tr.is-now td::after{ content:" \00b7 Abierto ahora" !important; }
+  </style>
+  <script id="i18n-script">
+
+  (function(){
+    var TEXT = {"Story": "Nuestra Historia", "Signatures": "Especialidades", "Menu": "Menú", "Gallery": "Galería", "Visit": "Visítanos", "Order Online": "Ordena en línea", "Order on Uber Eats": "Ordena en Uber Eats", "Call (309) 517-6516": "Llámanos (309) 517-6516", "Rock Island · Illinois · Quad Cities": "Rock Island · Illinois · Quad Cities", "Michoacán quesabirria, slow-cooked birria and": "Quesabirria michoacana, birria cocida a fuego lento y", "tortillas pressed by hand — every plate made to order.": "tortillas hechas a mano — cada platillo al momento.", "View the Menu": "Ver el menú", "Scroll": "Desliza", "Our Family": "Nuestra Familia", "From a kitchen in": "De una cocina en", "to a table in Rock Island.": "a una mesa en Rock Island.", "Taqueria Roly's is a family-run taqueria bringing the homemade, traditional food of\n            Michoacán, Mexico to the Quad Cities — now serving Rock Island on Blackhawk Road.": "Taqueria Roly's es una taquería familiar que trae la comida casera y tradicional de\n            Michoacán, México a las Quad Cities — ahora sirviendo a Rock Island sobre Blackhawk Road.", "The corn tortillas are pressed by hand and everything is made to order — including the\n            slow-cooked birria behind their famous quesabirria. There's a salsa bar from\n            mild to extra-spicy, and generous portions at honest, neighborly prices.": "Las tortillas de maíz se hacen a mano y todo se prepara al momento — incluyendo la\n            birria cocida a fuego lento detrás de su famosa quesabirria. Hay una barra de salsas\n            de suave a extra picosa, y porciones generosas a precios justos y de buen vecino.", "Meet the signatures →": "Conoce las especialidades →", "Inside the taqueria — papel picado, warm walls, an open door.": "Dentro de la taquería — papel picado, paredes cálidas, la puerta abierta.", "Rating on Google": "Calificación en Google", "Reviews · Google & Yelp": "Reseñas · Google y Yelp", "Handmade corn tortillas": "Tortillas de maíz hechas a mano", "Made to order, by hand": "Hecho al momento, a mano", "The Signatures": "Las Especialidades", "The plates people\ndrive across town for.": "Los platillos por los que\ncruzan la ciudad.", "Slow-cooked birria and melted cheese griddled crisp on handmade tortillas, served with\n            a cup of deep-red consommé for dipping. The plate everyone orders — and the reason this\n            page exists.": "Birria cocida a fuego lento y queso derretido dorados en el comal sobre tortillas hechas a mano, servida con\n            un vasito de consomé rojo intenso para remojar. El platillo que todos piden — y la razón por la que existe esta\n            página.", "See it on the menu →": "Míralo en el menú →", "Grilled steak chopped fine over warm, hand-pressed corn tortillas, finished the\n            way it should be — white onion, fresh cilantro and a squeeze of lime. Simple, honest, Michoacán.": "Bistec asado picado finito sobre tortillas de maíz calientitas hechas a mano, rematado como\n            debe ser — cebolla blanca, cilantro fresco y un chorrito de limón. Sencillo, honesto, michoacano.", "See the taco list →": "Ve la lista de tacos →", "The Taco Plate": "El Plato de Tacos", "Street tacos with rice and refried beans, plated with red and green salsa from the\n            bar. \"Great portions,\" guests say — and the rice and beans get their own praise.": "Tacos callejeros con arroz y frijoles refritos, servidos con salsa roja y verde de la\n            barra. \"Excelentes porciones\", dicen los clientes — y el arroz y los frijoles se llevan sus propios elogios.", "Build your plate →": "Arma tu plato →", "Tacos by the Tray": "Tacos por Charola", "Asada and al pastor street tacos at $1.75 each — order a party tray for the whole\n            crew, with the salsa bar from mild to bring-a-glass-of-water on the side.": "Tacos callejeros de asada y al pastor a $1.75 cada uno — pide una charola para toda\n            la banda, con la barra de salsas de suave hasta \"trae-un-vaso-de-agua\" a un lado.", "See the menu →": "Ve el menú →", "The Menu": "El Menú", "Tacos, tortas,\nburritos & more.": "Tacos, tortas,\nburritos y más.", "Made to order on handmade corn tortillas, with a salsa bar from mild to extra-spicy.\n          Call": "Hecho al momento sobre tortillas de maíz hechas a mano, con una barra de salsas de suave a extra picosa.\n          Llama al", "or order on Uber Eats & DoorDash.": "o ordena en Uber Eats y DoorDash.", "Tacos": "Tacos", "Grilled steak with onion and cilantro on a handmade corn tortilla.": "Bistec asado con cebolla y cilantro en tortilla de maíz hecha a mano.", "Marinated pork with onion and cilantro.": "Cerdo marinado con cebolla y cilantro.", "Tortas": "Tortas", "Grilled steak Mexican sandwich, dressed and stacked.": "Torta de bistec asado, bien preparada y rellenita.", "Marinated pork sandwich on toasted bread.": "Torta de cerdo marinado en pan tostado.", "Burritos": "Burritos", "Grilled steak rolled with rice and beans.": "Bistec asado enrollado con arroz y frijoles.", "Chicken rolled with rice and beans.": "Pollo enrollado con arroz y frijoles.", "Platillos": "Platillos", "Dinner plates served with rice and beans.": "Platos fuertes servidos con arroz y frijoles.", "Steak simmered in a rustic ranchero sauce with peppers and onion.": "Bistec guisado en una salsa ranchera rústica con chiles y cebolla.", "Steak with tomato, onion and jalapeño.": "Bistec con jitomate, cebolla y jalapeño.", "Fin de Semana · Weekends": "Fin de Semana · Fines de semana", "Traditional tripe and hominy soup with onion, cilantro and lime.": "Sopa tradicional de pancita y maíz con cebolla, cilantro y limón.", "A hearty shrimp soup — the weekend favorite.": "Un caldo de camarón bien sustancioso — el favorito del fin de semana.", "top": "top", "most popular": "los más pedidos", "platillos come with rice & beans": "los platillos vienen con arroz y frijoles", "ask about weekend specials": "pregunta por los especiales del fin de semana", "Order on DoorDash": "Ordena en DoorDash", "From the Table": "Desde la Mesa", "A taqueria in pictures.": "Una taquería en fotos.", "Slow-Cooked Birria": "Birria a fuego lento", "Hours of simmering before it ever hits the griddle.": "Horas de cocción lenta antes de llegar al comal.", "Handmade Tortillas": "Tortillas hechas a mano", "Pressed by hand by Martha — the way it's done at home.": "Hechas a mano por Martha — como se hace en casa.", "Salsa Bar": "Barra de salsas", "From mild to fiery — every level made in house.": "De suave a bien picosa — cada nivel hecho en casa.", "Made to Order": "Hecho al momento", "Nothing sits — your plate is cooked when you order it.": "Nada se queda parado — tu plato se cocina cuando lo pides.", "Michoacán Family": "Familia michoacana", "Michoacán hometown recipes, made by hand.": "Recetas de la tierra de Michoacán, hechas a mano.", "Delivery Available": "Servicio a domicilio", "Order on Uber Eats & DoorDash, or call ahead.": "Ordena en Uber Eats y DoorDash, o llama con anticipación.", "Word of Mouth": "De Boca en Boca", "What guests say.": "Lo que dicen los clientes.", "★★★★★  4.4 on Google · 250+ reviews": "★★★★★  4.4 en Google · 250+ reseñas", "\"Easily the best steak tacos I've had in a while — come out and have a truly authentic meal here!\"": "\"Sin duda los mejores tacos de bistec que he probado en mucho tiempo — ¡vengan a disfrutar una comida bien auténtica aquí!\"", "· Google": "· Google", "\"Delicious food, friendly staff. Try the Quesabirras — so good!\"": "\"Comida deliciosa, personal muy amable. Prueben las quesabirrias — ¡buenísimas!\"", "\"Street-taco style with cilantro, onion and a tasty salsa verde — plus a salsa bar from mild to extra-spicy.\"": "\"Estilo taco callejero con cilantro, cebolla y una sabrosa salsa verde — más una barra de salsas de suave a extra picosa.\"", "Google review": "Reseña de Google", "Visit Us": "Visítanos", "Come hungry.\nThere's parking.": "Ven con hambre.\nHay estacionamiento.", "Address": "Dirección", "Order & Contact": "Ordena y contáctanos", "Hours": "Horario", "Monday": "Lunes", "Tuesday": "Martes", "Wednesday": "Miércoles", "Thursday": "Jueves", "Friday": "Viernes", "Saturday": "Sábado", "Sunday": "Domingo", "Closed": "Cerrado", "Call to Order": "Llama para ordenar", "Get Directions": "Cómo llegar", "Michoacán quesabirria, made by hand.\nRock Island, Illinois · Quad Cities.": "Quesabirria michoacana, hecha a mano.\nRock Island, Illinois · Quad Cities.", "Explore": "Explora", "Our Story": "Nuestra Historia", "© 2026 Taqueria Roly's. All Rights Reserved.": "© 2026 Taqueria Roly's. Todos los derechos reservados.", "Tacos · Tortas · Burritos & more": "Tacos · Tortas · Burritos y más", "Call": "Llamar", "Map": "Mapa", "Order": "Ordenar", "· Open now": "· Abierto ahora", "· Closed now": "· Cerrado ahora"};
+    var ATTR = {"Taqueria Roly's home": "Inicio de Taqueria Roly's", "Taqueria Roly's logo": "Logo de Taqueria Roly's", "Primary": "Principal", "Open menu": "Abrir menú", "Menu": "Menú", "Close menu": "Cerrar menú", "Mobile": "Móvil", "Scroll down": "Desliza hacia abajo", "The colorful dining room at Taqueria Roly's, hung with papel picado banners over warm orange and yellow walls": "El colorido comedor de Taqueria Roly's, adornado con papel picado sobre cálidas paredes anaranjadas y amarillas", "Golden quesabirria tacos crisped on the griddle, served with a cup of deep-red consommé, cilantro, onion and lime": "Tacos dorados de quesabirria tostaditos en el comal, servidos con un vasito de consomé rojo intenso, cilantro, cebolla y limón", "Carne asada tacos on handmade corn tortillas, topped with cilantro, onion and a wedge of lime": "Tacos de carne asada en tortillas de maíz hechas a mano, coronados con cilantro, cebolla y un gajo de limón", "A taco plate at Taqueria Roly's with three street tacos, refried beans, Mexican rice and two salsas": "Un plato de tacos en Taqueria Roly's con tres tacos callejeros, frijoles refritos, arroz a la mexicana y dos salsas", "A party tray of asada and al pastor street tacos with green and red salsa, jalapeños and lime": "Una charola de tacos callejeros de asada y al pastor con salsa verde y roja, jalapeños y limón", "Crisp quesabirria tacos with consommé, cilantro and onion": "Tacos crujientes de quesabirria con consomé, cilantro y cebolla", "A taco plate with rice, beans and two salsas": "Un plato de tacos con arroz, frijoles y dos salsas", "The festive dining room hung with papel picado": "El comedor festivo adornado con papel picado", "A platter of street tacos topped with cilantro and onion": "Una charola de tacos callejeros coronados con cilantro y cebolla", "Chips and red salsa in a clay bowl in the bright dining room": "Totopos y salsa roja en un tazón de barro en el luminoso comedor", "Carne asada tacos with lime on handmade tortillas": "Tacos de carne asada con limón en tortillas hechas a mano", "A steak burrito cut in half, showing the filling of asada, pico and avocado": "Un burrito de bistec partido a la mitad, mostrando el relleno de asada, pico y aguacate", "The counter and dining room with papel picado and an agua fresca dispenser": "El mostrador y el comedor con papel picado y un dispensador de agua fresca", "Why eat with us": "Por qué comer con nosotros", "5 out of 5 stars": "5 de 5 estrellas", "Map to Taqueria Roly's, 3850 Blackhawk Rd, Rock Island, IL": "Mapa a Taqueria Roly's, 3850 Blackhawk Rd, Rock Island, IL", "Quick actions": "Acciones rápidas"};
+    var HTML = {};
+    var KEY = "tr_lang";
+    function dec(s){ try{ var e=document.createElement('textarea'); e.innerHTML=s; return e.value; }catch(_){ return String(s); } }
+    function norm(s){ return dec(String(s)).replace(/\s+/g,' ').trim(); }
+    var T={}, A={};
+    for(var k in TEXT){ if(TEXT.hasOwnProperty(k)){ var kk=norm(k); if(kk) T[kk]=TEXT[k]; } }
+    for(var k2 in ATTR){ if(ATTR.hasOwnProperty(k2)){ var na=norm(k2); if(na) A[na]=ATTR[k2]; } }
+    var lang='en';
+    try{
+      var up=new URLSearchParams(location.search).get('lang');
+      if(up==='es'||up==='en'){ lang=up; localStorage.setItem(KEY,up); }
+      else if(localStorage.getItem(KEY)==='es'){ lang='es'; }
+    }catch(_){ try{ if(localStorage.getItem(KEY)==='es') lang='es'; }catch(e){} }
+    var SKIP={SCRIPT:1,STYLE:1,NOSCRIPT:1,TEXTAREA:1,CODE:1};
+    var tnodes=[], anodes=[], hnodes=[];
+    var seen=(window.WeakSet)?new WeakSet():null;
+    var seenH=(window.WeakSet)?new WeakSet():null;
+    function nkey(v){ return v.replace(/\s+/g,' ').trim(); }
+    function scan(root){
+      if(!root||root.nodeType!==1) return;
+      var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null,false), n;
+      while(n=w.nextNode()){
+        var v=n.nodeValue; if(!v) continue; var key=nkey(v); if(!key) continue;
+        var p=n.parentNode; if(!p||SKIP[p.nodeName]) continue;
+        if(!T.hasOwnProperty(key)) continue;
+        if(seen){ if(seen.has(n)) continue; seen.add(n); }
+        tnodes.push({node:n,en:v,key:key});
+      }
+      var names=['placeholder','aria-label','title','alt'];
+      var els=root.querySelectorAll('[placeholder],[aria-label],[title],[alt]');
+      for(var i=0;i<els.length;i++){ var el=els[i];
+        for(var a=0;a<names.length;a++){ var nm=names[a]; if(!el.hasAttribute(nm)) continue;
+          var val=el.getAttribute(nm); var vk=val?nkey(val):''; if(!vk||!A.hasOwnProperty(vk)) continue;
+          anodes.push({el:el,attr:nm,en:val,key:vk});
+        }
+      }
+      var hs=root.querySelectorAll('[data-i18n]');
+      for(var h=0;h<hs.length;h++){ var he=hs[h];
+        if(seenH){ if(seenH.has(he)) continue; seenH.add(he); }
+        var id=he.getAttribute('data-i18n');
+        if(HTML.hasOwnProperty(id)) hnodes.push({el:he,en:he.innerHTML,k:id});
+      }
+    }
+    function repl(orig,es){ var m=orig.match(/^(\s*)([\s\S]*?)(\s*)$/); return m[1]+es+m[3]; }
+    function apply(){
+      for(var i=0;i<tnodes.length;i++){ var o=tnodes[i];
+        o.node.nodeValue=(lang==='es'&&T[o.key]!=null)?repl(o.en,T[o.key]):o.en; }
+      for(var j=0;j<anodes.length;j++){ var e=anodes[j];
+        e.el.setAttribute(e.attr,(lang==='es'&&A[e.key]!=null)?A[e.key]:e.en); }
+      for(var g=0;g<hnodes.length;g++){ var hn=hnodes[g];
+        var want=(lang==='es'&&HTML[hn.k]!=null)?HTML[hn.k]:hn.en;
+        if(hn.el.innerHTML!==want) hn.el.innerHTML=want; }
+      try{ document.documentElement.setAttribute('lang',lang); }catch(_){}
+      var b=document.getElementById('langToggle');
+      if(b){ var ss=b.querySelectorAll('[data-l]'); for(var q=0;q<ss.length;q++){ ss[q].classList.toggle('on',ss[q].getAttribute('data-l')===lang); } }
+    }
+    function setLang(l){ lang=(l==='es')?'es':'en'; try{localStorage.setItem(KEY,lang);}catch(_){}; apply(); }
+    function init(){
+      scan(document.body); apply();
+      var btn=document.getElementById('langToggle');
+      if(btn){ btn.addEventListener('click',function(ev){
+        var el=ev.target; while(el&&el!==btn&&!(el.getAttribute&&el.getAttribute('data-l'))) el=el.parentNode;
+        var l=(el&&el.getAttribute)?el.getAttribute('data-l'):null;
+        setLang(l?l:(lang==='es'?'en':'es'));
+      }); }
+      if(window.MutationObserver){
+        var pending=false;
+        var mo=new MutationObserver(function(){ if(pending) return; pending=true;
+          setTimeout(function(){ pending=false; var b0=tnodes.length+anodes.length+hnodes.length; scan(document.body); if(tnodes.length+anodes.length+hnodes.length!==b0) apply(); },160); });
+        mo.observe(document.body,{childList:true,subtree:true});
+      } else { setTimeout(function(){ scan(document.body); apply(); },1200); setTimeout(function(){ scan(document.body); apply(); },3000); }
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+  })();
+
   </script>
 </body>
 </html>
